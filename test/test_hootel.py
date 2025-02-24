@@ -16,11 +16,10 @@ class TestHootel(object):
         options.add_experimental_option("detach", True)
         self.browser = webdriver.Chrome(options=options)
         self.browser.get(URL)
+        self.browser.maximize_window()
 
     def teardown_method(self):
         self.browser.quit()
-    driver = webdriver.Chrome()
-    driver.set_window_size(1200, 800)  #
     @allure.title("Hootel Login")
     @allure.description("A belépés tesztelése")
     @allure.severity(allure.severity_level.TRIVIAL)
