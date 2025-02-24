@@ -16,7 +16,7 @@ class TestHootel(object):
         options.add_experimental_option("detach", True)
         self.browser = webdriver.Chrome(options=options)
         self.browser.get(URL)
-        options.add_argument('window-size=1920x1080')
+        options.add_argument('window-size=1920,1080')
 
     def teardown_method(self):
         self.browser.quit()
