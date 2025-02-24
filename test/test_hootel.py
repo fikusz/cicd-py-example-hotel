@@ -14,6 +14,7 @@ class TestHootel(object):
         options.add_experimental_option("detach", True)
         self.browser = webdriver.Chrome(options=options)
         self.browser.get(URL)
+        self.browser.maximize_window()
 
     def teardown_method(self):
         self.browser.quit()
@@ -23,10 +24,8 @@ class TestHootel(object):
     @allure.severity(allure.severity_level.TRIVIAL)
     @allure.tag("login")
     def test_login(self):
-        time.sleep(3)
         login_btn = self.browser.find_element(By.XPATH, '//a[@class="nav-link"]')
         time.sleep(3)
-        login_btn.click()
 
         email_input = self.browser.find_element(By.ID, 'email')
         email_input.send_keys('hiwasi1765@wisnick.com')
