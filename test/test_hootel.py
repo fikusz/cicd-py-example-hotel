@@ -25,6 +25,7 @@ class TestHootel(object):
     def test_login(self):
         time.sleep(3)
         login_btn = self.browser.find_element(By.XPATH, '//a[@class="nav-link"]')
+        time.sleep(3)
         login_btn.click()
 
         email_input = self.browser.find_element(By.ID, 'email')
